@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+==================================================================================
+
+Paymend is a payment tracking web app. With Paymend you can:
+
+- Log and track recurring bill payment amounts and dates.
+- Log and track money owed and paid.
+- Log and track money saved in a HISA.
+- Log and track money deposited to or withdrawn from registered accounts (TFSA, RRSP, RESP, etc.).
+- View charts and analytics of expenses and savings.
