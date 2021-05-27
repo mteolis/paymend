@@ -27,7 +27,10 @@ def create_app(test_config=None):
     db.init_app(app)
     Migrate(app, db)
 
-    from models import Bill, MoneyOwed
+    from models import \
+        Bill, \
+        MoneyOwed, \
+        HighInterestSavingsAccount
 
     @app.route('/time')
     def get_current_time():
