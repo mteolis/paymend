@@ -2,6 +2,9 @@ import os
 import time
 from flask import Flask
 from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
 
 
 def create_app(test_config=None):
@@ -21,9 +24,10 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    from models.Bill import db
     db.init_app(app)
-    migrate = Migrate(app, db)
+    Migrate(app, db)
+
+    from models import Bill, MoneyOwed
 
     @app.route('/time')
     def get_current_time():

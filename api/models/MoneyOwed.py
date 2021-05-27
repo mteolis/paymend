@@ -1,12 +1,14 @@
 from api import db
 
 
-class Bill(db.Model):
-    __tablename__ = 'bill'
+class MoneyOwed(db.Model):
+    __tablename__ = 'money_owed'
 
     id = db.Column(db.Integer, primary_key=True)
-    cost = db.Column(db.Float)
+    amount = db.Column(db.Float)
     currency = db.Column(db.String)
     payment_date = db.Column(db.Date)
     frequency = db.Column(db.String)
     category = db.Column(db.String)
+    sender = db.Column(db.String)
+    recipient = db.Column(db.String)
