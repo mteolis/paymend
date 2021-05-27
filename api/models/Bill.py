@@ -1,12 +1,6 @@
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from env_secrets import env_secrets
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = env_secrets.sqlalchemy_database_uri
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+db = SQLAlchemy()
 
 
 class Bill(db.Model):
@@ -14,10 +8,10 @@ class Bill(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     cost = db.Column(db.Float)
-    currency = db.Column(db.Enum)
+    currency = db.Column(db.String)
     payment_date = db.Column(db.Date)
-    frequency = db.Column(db.Enum)
-    category = db.Column(db.Enum)
+    frequency = db.Column(db.String)
+    category = db.Column(db.String)
 
     def __init__(self, cost, currency, payment_date, frequency, category):
         self.cost = cost
